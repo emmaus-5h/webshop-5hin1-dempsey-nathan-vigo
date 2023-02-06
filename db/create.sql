@@ -7,7 +7,7 @@ CREATE TABLE products (
   code VARCHAR(15),
   name VARCHAR(255),
   description TEXT,
-  price NUMERIC(10, 2)
+  price NUMERIC(10, 2),
   serie_id INTEGER
   -- voeg serie toe
 );

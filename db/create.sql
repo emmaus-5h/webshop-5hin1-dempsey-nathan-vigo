@@ -15,7 +15,10 @@ CREATE TABLE products (
 -- products en auteurs hebben een n:m relatie die is vastgelegd in de reviews tabel
 CREATE TABLE auteurs (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  auteurtekst TEXT
+  leeftijd INTEGER,
+  geslacht TEXT,
+  nationaliteit TEXT
+  
   
   -- review verwijst naar sneaker_id en persoon
   -- auteurs hebben een tekst (review)
@@ -26,6 +29,7 @@ CREATE TABLE auteurs (
 
   -- sneaker_id wijst naar de products.id
 CREATE TABLE reviews (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   auteur_id INTEGER, -- vervang door auteur_id
   opmerking TEXT,
   sneaker_id INTEGER
@@ -35,9 +39,17 @@ CREATE TABLE reviews (
 
 
 CREATE TABLE serie (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+  sneaker_id INTEGER,
   sneaker VARCHAR(10)
 );
 
+CREATE TABLE shoe_color (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+  sneaker_id INTEGER,
+  shoe_color TEXT,
+  sneaker VARCHAR(10)
+);
 --
 -- populate with data
 --
@@ -62,10 +74,27 @@ insert into reviews (auteur_id, opmerking, sneaker_id) values ('Jayson', 'Favour
 insert into reviews (auteur_id, opmerking, sneaker_id) values ('Merel', 'Toffe schoen voor mijn zoon', 3);
 insert into reviews (auteur_id, opmerking, sneaker_id) values ('Mike', 'Supper product', 4);
 insert into reviews (auteur_id, opmerking, sneaker_id) values ('Remco', 'Bedankt voor de goede service', 4);
-insert into reviews (auteur_id, opmerking, sneaker_id) values ('Daan', 'Bedsnkt', 5);
+insert into reviews (auteur_id, opmerking, sneaker_id) values ('Daan', 'Bedankt', 5);
 insert into reviews (auteur_id, opmerking, sneaker_id) values ('Flynn', 'Eindelijk in mijn maat gevonden en ook nog eens snel geleverd', 5);
 insert into reviews (auteur_id, opmerking, sneaker_id) values ('Joppe', 'Te klein en veel te laat geleverd...', 6);
 insert into reviews (auteur_id, opmerking, sneaker_id) values ('Bundy', 'Goede schoen dit', 6);
 
-
-
+insert into auteurs (auteur_id, leeftijd, geslacht, nationaliteit) values ('Josh', '20', 'Male', 'UK')
+insert into auteurs (auteur_id, leeftijd, geslacht, nationaliteit) values ('Emma', '13', 'Female', 'Marrakech')
+  insert into auteurs (auteur_id, leeftijd, geslacht, nationaliteit) values ('Derrel', '69', 'Male', 'Germany ')
+  insert into auteurs (auteur_id, leeftijd, geslacht, nationaliteit) values ('Sophie', '18', 'Female', 'Denmark')
+  insert into auteurs (auteur_id, leeftijd, geslacht, nationaliteit) values ('Jayson', '28', 'Male', 'Nigeria')
+  insert into auteurs (auteur_id, leeftijd, geslacht, nationaliteit) values ('Merel', '15', 'Female', 'Netherlands')
+  insert into auteurs (auteur_id, leeftijd, geslacht, nationaliteit) values ('Mike', '33', 'Male', 'USA')
+  insert into auteurs (auteur_id, leeftijd, geslacht, nationaliteit) values ('Remco', '20', 'Male', 'Belgium')
+  insert into auteurs (auteur_id, leeftijd, geslacht, nationaliteit) values ('Daan', '40', 'Male', 'Netherlands')
+  insert into auteurs (auteur_id, leeftijd, geslacht, nationaliteit) values ('Josh', '20', 'Male', 'UK')
+  insert into auteurs (auteur_id, leeftijd, geslacht, nationaliteit) values ('Josh', '20', 'Male', 'UK')
+  insert into auteurs (auteur_id, leeftijd, geslacht, nationaliteit) values ('Josh', '20', 'Male', 'UK')
+  
+insert into shoe_color (sneaker_id, shoe_color) values ('1','Black')
+insert into shoe_color (sneaker_id, shoe_color) values ('2','White')
+insert into shoe_color (sneaker_id, shoe_color) values ('3','Red')
+insert into shoe_color (sneaker_id, shoe_color) values ('4','Brown')
+insert into shoe_color (sneaker_id, shoe_color) values ('5','Red')
+insert into shoe_color (sneaker_id, shoe_color) values ('6','Grey')

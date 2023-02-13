@@ -68,7 +68,7 @@ function getProducts(request, response) {
   console.log('API ontvangt /api/products/', request.query)
   let data = []
   // const sqlOpdracht = db.prepare('SELECT products.id AS id, products.name AS name, products.description AS description, products.code AS code, products.price AS price FROM products ORDER BY price DESC')
-  const sqlOpdracht = db.prepare('SELECT products.id AS id, products.name AS name, products.description AS description, products.code AS code, products.price AS price, serie.soort FROM products  JOIN serie ON serie.products_id = products.id ORDER BY price DESC')
+  const sqlOpdracht = db.prepare('SELECT products.id AS id, products.name AS name, products.description AS description, products.code AS code, products.price AS price, serie.naam FROM products JOIN serie ON products.serie_id = serie.id ORDER BY price DESC') //vraag over code? correct??
   
   data = sqlOpdracht.all()
   // console.log(JSON.stringify(data, null, 2))

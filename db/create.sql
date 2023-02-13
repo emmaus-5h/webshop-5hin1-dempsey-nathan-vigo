@@ -64,12 +64,12 @@ insert into products (name, description, code, price, serie_id) values ('Air Jor
 insert into products (name, description, code, price, serie_id) values ('Air Jordan 1 X OFF WHITE', 'Deze schoen is niet meer weg te denken uit de sneaker industrie en is daarmee nogsteeds zo populair onder vele seleberties!', '077030122-3', 1300.00, 1);
 insert into products (name, description, code, price, serie_id) values ('Nike X Yeezy Red October', 'Deze samenwerking is voor de echte old schools onder ons. Ben jij nou fan van Kanye West en Nike dan is dit echt een schoen voor jou!', '445924201-X', 5000.75, 4);
 insert into products (name, description, code, price, serie_id) values ('Air jordan 1 Low X Cactus Jack ', 'Super gave schoen met een geweldige pasvorm wordt geleverd met exclusive goodie bag!', '693155505-7', 1450.00, 1);
-insert into products (name, description, code, price, serie_id)) values ('Nike Air Jordan 1 X OFF WHITE', 'Deze samenwerking heeft niet stilgezeten en bloeit nogsteeds in de fashionindustrie!', '686928463-6', 11000.50, 1);
+insert into products (name, description, code, price, serie_id) values ('Nike Air Jordan 1 X OFF WHITE', 'Deze samenwerking heeft niet stilgezeten en bloeit nogsteeds in de fashionindustrie!', '686928463-6', 11000.50, 1);
 insert into products (name, description, code, price, serie_id) values ('Nike Dunk Low Pigeon', 'Dit is alweer een oudje uit 2005, maar bij ons nogsteeds verkrijgbaar in de allerbeste gloednieuwe staat!', '492662523-7', 20005.00, 5);
 insert into products (name, description, code, price, serie_id) values ('Nike Dunk Low Cherry', 'Geimporteerd vanuit de USA nu exclusief bij ons verkrijgbaar!', '492662523-7', 40000.00, 5);
-insert into products (name, description, code, price, serie_id) values ('Yeezy 350 V2', 'Super comfortabele schoen en de prijs is ook heel voordelig', '492662523-7', 350.00);
-insert into products (name, description, code, price, serie_id) values ('Yeezy 700 V2', 'Super stoere shoen voor alle leeftijden beschikbaar!', '492662523-7', 700.00);
-insert into products (name, description, code, price, serie_id) values ('Nike dunk High michagan', 'Mooi en klasiek model', '492662523-7', 200.00);
+insert into products (name, description, code, price, serie_id) values ('Yeezy 350 V2', 'Super comfortabele schoen en de prijs is ook heel voordelig', '492662523-7', 350.00, 4);
+insert into products (name, description, code, price, serie_id) values ('Yeezy 700 V2', 'Super stoere shoen voor alle leeftijden beschikbaar!', '492662523-7', 700.00, 4);
+insert into products (name, description, code, price, serie_id) values ('Nike dunk High michagan', 'Mooi en klasiek model', '492662523-7', 200.00, 5);
 
 insert into reviews (auteur_id, opmerking, products_id) values ('1', 'Coole patta', 1);
 insert into reviews (auteur_id, opmerking, products_id) values ('2', 'Fijne pasvorm en hele betrouwbare kwaliteit', 1);

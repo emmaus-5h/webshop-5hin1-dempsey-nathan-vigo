@@ -41,9 +41,8 @@ CREATE TABLE reviews (
 
 CREATE TABLE serie (
 id INTEGER PRIMARY KEY AUTOINCREMENT,
-  products_id INTEGER,
-  soort VARCHAR(30)
-  
+  naam VARCHAR(30),
+  geboortejaar INTEGER
 );
 
 CREATE TABLE shoe_color (
@@ -61,16 +60,16 @@ id INTEGER PRIMARY KEY AUTOINCREMENT,
 -- want different data? check: https://www.mockaroo.com/910b6c20
 --
 
-insert into products (name, description, code, price) values ('Air Jordan 4 Black Cats', 'Een echte klassieker uit 2010, super exclusief en nogsteeds een parel wereldwijd!', '816905633-0', 750.95);
-insert into products (name, description, code, price) values ('Air Jordan 1 X OFF WHITE', 'Deze schoen is niet meer weg te denken uit de sneaker industrie en is daarmee nogsteeds zo populair onder vele seleberties!', '077030122-3', 1300.00);
-insert into products (name, description, code, price) values ('Nike X Yeezy Red October', 'Deze samenwerking is voor de echte old schools onder ons. Ben jij nou fan van Kanye West en Nike dan is dit echt een schoen voor jou!', '445924201-X', 5000.75);
-insert into products (name, description, code, price) values ('Air jordan 1 Low X Cactus Jack ', 'Super gave schoen met een geweldige pasvorm wordt geleverd met exclusive goodie bag!', '693155505-7', 1450.00);
-insert into products (name, description, code, price) values ('Nike Air Jordan 1 X OFF WHITE', 'Deze samenwerking heeft niet stilgezeten en bloeit nogsteeds in de fashionindustrie!', '686928463-6', 11000.50);
-insert into products (name, description, code, price) values ('Nike Dunk Low Pigeon', 'Dit is alweer een oudje uit 2005, maar bij ons nogsteeds verkrijgbaar in de allerbeste gloednieuwe staat!', '492662523-7', 20005.00);
-insert into products (name, description, code, price) values ('Nike Dunk Low Cherry', 'Geimporteerd vanuit de USA nu exclusief bij ons verkrijgbaar!', '492662523-7', 40000.00);
-insert into products (name, description, code, price) values ('Yeezy 350 V2', 'Super comfortabele schoen en de prijs is ook heel voordelig', '492662523-7', 350.00);
-insert into products (name, description, code, price) values ('Yeezy 700 V2', 'Super stoere shoen voor alle leeftijden beschikbaar!', '492662523-7', 700.00);
-insert into products (name, description, code, price) values ('Nike dunk High michagan', 'Mooi en klasiek model', '492662523-7', 200.00);
+insert into products (name, description, code, price, serie_id) values ('Air Jordan 4 Black Cats', 'Een echte klassieker uit 2010, super exclusief en nogsteeds een parel wereldwijd!', '816905633-0', 750.95, 2);
+insert into products (name, description, code, price, serie_id) values ('Air Jordan 1 X OFF WHITE', 'Deze schoen is niet meer weg te denken uit de sneaker industrie en is daarmee nogsteeds zo populair onder vele seleberties!', '077030122-3', 1300.00, 1);
+insert into products (name, description, code, price, serie_id) values ('Nike X Yeezy Red October', 'Deze samenwerking is voor de echte old schools onder ons. Ben jij nou fan van Kanye West en Nike dan is dit echt een schoen voor jou!', '445924201-X', 5000.75, 4);
+insert into products (name, description, code, price, serie_id) values ('Air jordan 1 Low X Cactus Jack ', 'Super gave schoen met een geweldige pasvorm wordt geleverd met exclusive goodie bag!', '693155505-7', 1450.00, 1);
+insert into products (name, description, code, price, serie_id)) values ('Nike Air Jordan 1 X OFF WHITE', 'Deze samenwerking heeft niet stilgezeten en bloeit nogsteeds in de fashionindustrie!', '686928463-6', 11000.50, 1);
+insert into products (name, description, code, price, serie_id) values ('Nike Dunk Low Pigeon', 'Dit is alweer een oudje uit 2005, maar bij ons nogsteeds verkrijgbaar in de allerbeste gloednieuwe staat!', '492662523-7', 20005.00, 5);
+insert into products (name, description, code, price, serie_id) values ('Nike Dunk Low Cherry', 'Geimporteerd vanuit de USA nu exclusief bij ons verkrijgbaar!', '492662523-7', 40000.00, 5);
+insert into products (name, description, code, price, serie_id) values ('Yeezy 350 V2', 'Super comfortabele schoen en de prijs is ook heel voordelig', '492662523-7', 350.00);
+insert into products (name, description, code, price, serie_id) values ('Yeezy 700 V2', 'Super stoere shoen voor alle leeftijden beschikbaar!', '492662523-7', 700.00);
+insert into products (name, description, code, price, serie_id) values ('Nike dunk High michagan', 'Mooi en klasiek model', '492662523-7', 200.00);
 
 insert into reviews (auteur_id, opmerking, products_id) values ('1', 'Coole patta', 1);
 insert into reviews (auteur_id, opmerking, products_id) values ('2', 'Fijne pasvorm en hele betrouwbare kwaliteit', 1);
@@ -121,8 +120,8 @@ insert into shoe_color (products_id, color) values ('8','White');
 insert into shoe_color (products_id, color) values ('9','Orange, Yellow, Black');
 insert into shoe_color (products_id, color) values ('10','Navy, Yellow');
 
-insert into serie (soort, products_id) values ('Air Jordan 1 High', '2,5');
-insert into serie (soort, products_id) values ('Air Jordan 4', '1');
-insert into serie (soort, products_id) values ('Air Jordan 1 Low', '4');
-insert into serie (soort, products_id) values ('Yeezy', '3,8,9');
-insert into serie (soort, products_id) values ('Nike Dunk', '6,7,10');
+insert into serie (naam, geboortejaar) values ('Air Jordan 1 High', '2009');
+insert into serie (naam, geboortejaar) values ('Air Jordan 4', '2010');
+insert into serie (naam, geboortejaar) values ('Air Jordan 1 Low', '1950');
+insert into serie (naam, geboortejaar) values ('Yeezy', '2000');
+insert into serie (naam, geboortejaar) values ('Nike Dunk', '1900');

@@ -7,10 +7,14 @@
 	 crossorigin="anonymous">
 	<link rel="stylesheet" href="/css/style.css">
 </head>
+  
+  
+
 
 <body>
   <!-- toast is een melding die tijdelijk rechtsboven op het scherm verschijnt -->
   <!-- meer info op: https://www.w3schools.com/bootstrap4/bootstrap_ref_js_toasts.asp -->
+
 	<div class="toast" data-delay="2000">
 		<div class="toast-header">
 			<strong class="mr-auto">Product toegevoegd</strong>
@@ -34,6 +38,9 @@
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active">
 					<a class="nav-link" href="#">Artikelen <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#">Air Jordan <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#">Nike Dunk <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#">Yeezy <span class="sr-only">(current)</span></a>
 				</li>
 			</ul>
 			<a
@@ -44,11 +51,12 @@
   <!-- lijst met producten, wordt gevuld door javascript -->
 	<main id="index">
 		<div class="container">
-			<h5>Producten</h5>
- 			<p>Hier zie je een lijst met artikelen die je bij mij kunt bestellen.</p>
-			<p>klik op een artikel voor meer informatie<p>
+			<h5>Sneakers</h5>
+ 			<p>Op deze pagina ziet u een overzicht van alle sneakers die bij ons beschikbaar zijn</p>
+			<p>klik op een artikel voor meer product informatie<p>
 					<p>klik op de "winkelwagentje" om het artikel in je winkelwagen te stoppen</p>
 		</div>	
+    
     <!-- template for product info-->
   	<template id="productcard">
 		<div class="col-sm">

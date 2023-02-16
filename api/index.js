@@ -26,7 +26,7 @@ app.use(express.static('../web'))
 
 // definieer startpunten voor de API-server
 app.get('/api/echo', echoRequest)
-app.get('/api/categories', getCategories)
+app.get('/api/reviews', getReviews)
 app.get('/api/products', getProducts)
 app.get('/api/products/:id', getProductById)
 //app.get('/api/products/:id/related', db.getRelatedProductsById)
@@ -54,21 +54,21 @@ function echoRequest(request, response) {
   response.status(200).send(request.query)
 }
 
-function getCategories(request, response) {
-  console.log('API ontvangt /api/categories/')
+function getReviews(request, response) {
+  console.log('API ontvangt /api/reviews/')
   // TODO: breid database uit zodat onderstaande query een lijstje categoriën levert.
-  const sqlOpdracht = db.prepare('SELECT categories.name AS category_name FROM categories ORDER BY id ASC')
+  const sqlOpdracht = db.prepare('SELECT reviews.id AS id, reviews.opmerking AS opmerking, products.name FROM reviews JOIN products on reviews.products_id = products_id ORDER BY price DESC')
   const data = sqlOpdracht.all()
   // console.log(JSON.stringify(data, null, 2))
   response.status(200).send(data)
-  console.log('API verstuurt /api/categories/')
+  console.log('API verstuurt /api/reviews/')
 }
 
 function getProducts(request, response) {
   console.log('API ontvangt /api/products/', request.query)
   let data = []
   // const sqlOpdracht = db.prepare('SELECT products.id AS id, products.name AS name, products.description AS description, products.code AS code, products.price AS price FROM products ORDER BY price DESC')
-  const sqlOpdracht = db.prepare('SELECT products.id AS id, products.name AS name, products.description AS description, products.code AS code, products.price AS price, serie.naam FROM products JOIN serie ON products.serie_id = serie.id ORDER BY price DESC') //vraag over code? correct??
+  const sqlOpdracht = db.prepare('SELECT products.id AS id, products.name AS name, products.description AS description, products.code AS code, products.price AS price, serie.name FROM products JOIN serie ON products.serie_id = serie.id ORDER BY price DESC') //vraag over code? correct??
   
   data = sqlOpdracht.all()
   // console.log(JSON.stringify(data, null, 2))

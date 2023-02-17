@@ -19,7 +19,7 @@ CREATE TABLE auteurs (
   leeftijd INTEGER,
   geslacht TEXT,
   nationaliteit TEXT,
-  naam TEXT
+  name VARCHAR(50)
   
   
   -- review verwijst naar sneaker_id en persoon
@@ -32,7 +32,7 @@ CREATE TABLE auteurs (
   -- sneaker_id wijst naar de products.id
 CREATE TABLE reviews (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  auteur_id INTEGER, -- vervang door auteur_id
+  auteurs_id INTEGER, -- vervang door auteur_id
   opmerking TEXT,
   products_id INTEGER
 );
@@ -74,45 +74,45 @@ insert into products (name, description, code, price, serie_id, looks_id) values
 insert into products (name, description, code, price, serie_id, looks_id) values ('Air Jordan 4 A Ma Maniere', 'Mooie schoon met hele mooie details', '492662523-7', 700.00, 2, 4);
 insert into products (name, description, code, price, serie_id, looks_id) values ('Air Jordan 4 Union', 'Artestieke collab', '492662523-7', 850.00, 2, 1);
 
-insert into reviews (auteur_id, opmerking, products_id) values ('1', 'Coole patta', 1);
-insert into reviews (auteur_id, opmerking, products_id) values ('2', 'Fijne pasvorm en hele betrouwbare kwaliteit', 1);
-insert into reviews (auteur_id, opmerking, products_id) values ('3', 'Lange levrtijd, maar product voldoed aan de omschrijving', 2);
-insert into reviews (auteur_id, opmerking, products_id) values ('4', 'Zitten wat strak... Misschien moet ik ze nog wat langer dragen. Voor de rest hele toffe kleuren', 2);
-insert into reviews (auteur_id, opmerking, products_id) values ('5', 'Favourite shoe', 3);
-insert into reviews (auteur_id, opmerking, products_id) values ('6', 'Toffe schoen voor mijn zoon', 3);
-insert into reviews (auteur_id, opmerking, products_id) values ('7', 'Supper product', 4);
-insert into reviews (auteur_id, opmerking, products_id) values ('8', 'Bedankt voor de goede service', 4);
-insert into reviews (auteur_id, opmerking, products_id) values ('9', 'Bedankt', 5);
-insert into reviews (auteur_id, opmerking, products_id) values ('10', 'Eindelijk in mijn maat gevonden en ook nog eens snel geleverd', 5);
-insert into reviews (auteur_id, opmerking, products_id) values ('11', 'Te klein en veel te laat geleverd...', 6);
-insert into reviews (auteur_id, opmerking, products_id) values ('12', 'Goede schoen dit', 6);
-insert into reviews (auteur_id, opmerking, products_id) values ('7', 'Mooi', 7);
-insert into reviews (auteur_id, opmerking, products_id) values ('8', 'Laat geleverd', 7);
-insert into reviews (auteur_id, opmerking, products_id) values ('13', 'Super blij mee toppp!', 8);
-insert into reviews (auteur_id, opmerking, products_id) values ('14', 'Goede kwaliteit wederom!', 8);
-insert into reviews (auteur_id, opmerking, products_id) values ('5', 'Super!', 9);
-insert into reviews (auteur_id, opmerking, products_id) values ('15', 'Cool!', 9);
-insert into reviews (auteur_id, opmerking, products_id) values ('2', 'Goede kleur', 10);
-insert into reviews (auteur_id, opmerking, products_id) values ('16', 'Amazing', 10);
-insert into reviews (auteur_id, opmerking, products_id) values ('16', 'Cool', 12);
-insert into reviews (auteur_id, opmerking, products_id) values ('8', 'Great!', 11);
+insert into reviews (auteurs_id, opmerking, products_id) values ('1', 'Coole patta', 1);
+insert into reviews (auteurs_id, opmerking, products_id) values ('2', 'Fijne pasvorm en hele betrouwbare kwaliteit', 1);
+insert into reviews (auteurs_id, opmerking, products_id) values ('3', 'Lange levertijd, maar product voldoed aan de omschrijving', 2);
+insert into reviews (auteurs_id, opmerking, products_id) values ('4', 'Zitten wat strak... Misschien moet ik ze nog wat langer dragen. Voor de rest hele toffe kleuren', 2);
+insert into reviews (auteurs_id, opmerking, products_id) values ('5', 'Favourite shoe', 3);
+insert into reviews (auteurs_id, opmerking, products_id) values ('6', 'Toffe schoen voor mijn zoon', 3);
+insert into reviews (auteurs_id, opmerking, products_id) values ('7', 'Supper product', 4);
+insert into reviews (auteurs_id, opmerking, products_id) values ('8', 'Bedankt voor de goede service', 4);
+insert into reviews (auteurs_id, opmerking, products_id) values ('9', 'Bedankt', 5);
+insert into reviews (auteurs_id, opmerking, products_id) values ('10', 'Eindelijk in mijn maat gevonden en ook nog eens snel geleverd', 5);
+insert into reviews (auteurs_id, opmerking, products_id) values ('11', 'Te klein en veel te laat geleverd...', 6);
+insert into reviews (auteurs_id, opmerking, products_id) values ('12', 'Goede schoen dit', 6);
+insert into reviews (auteurs_id, opmerking, products_id) values ('7', 'Mooi', 7);
+insert into reviews (auteurs_id, opmerking, products_id) values ('8', 'Laat geleverd', 7);
+insert into reviews (auteurs_id, opmerking, products_id) values ('13', 'Super blij mee toppp!', 8);
+insert into reviews (auteurs_id, opmerking, products_id) values ('14', 'Goede kwaliteit wederom!', 8);
+insert into reviews (auteurs_id, opmerking, products_id) values ('5', 'Super!', 9);
+insert into reviews (auteurs_id, opmerking, products_id) values ('15', 'Cool!', 9);
+insert into reviews (auteurs_id, opmerking, products_id) values ('2', 'Goede kleur', 10);
+insert into reviews (auteurs_id, opmerking, products_id) values ('16', 'Amazing', 10);
+insert into reviews (auteurs_id, opmerking, products_id) values ('16', 'Cool', 12);
+insert into reviews (auteurs_id, opmerking, products_id) values ('8', 'Great!', 11);
 
-insert into auteurs (naam, leeftijd, geslacht, nationaliteit) values ('Josh', '20', 'Male', 'UK');
-insert into auteurs (naam, leeftijd, geslacht, nationaliteit) values ('Emma', '13', 'Female', 'Marrakech');
-insert into auteurs (naam, leeftijd, geslacht, nationaliteit) values ('Derrel', '69', 'Male', 'Germany ');
-insert into auteurs (naam, leeftijd, geslacht, nationaliteit) values ('Sophie', '18', 'Female', 'Denmark');
-insert into auteurs (naam, leeftijd, geslacht, nationaliteit) values ('Jayson', '28', 'Male', 'Nigeria');
-insert into auteurs (naam, leeftijd, geslacht, nationaliteit) values ('Merel', '15', 'Female', 'Netherlands');
-insert into auteurs (naam, leeftijd, geslacht, nationaliteit) values ('Mike', '33', 'Male', 'USA');
-insert into auteurs (naam, leeftijd, geslacht, nationaliteit) values ('Remco', '20', 'Male', 'Belgium');
-insert into auteurs (naam, leeftijd, geslacht, nationaliteit) values ('Daan', '40', 'Male', 'Netherlands');
-insert into auteurs (naam, leeftijd, geslacht, nationaliteit) values ('Flynn', '23', 'Male', 'China');
-insert into auteurs (naam, leeftijd, geslacht, nationaliteit) values ('Joppe', '16', 'Male', 'France');
-insert into auteurs (naam, leeftijd, geslacht, nationaliteit) values ('Bundy', '33', 'Male', 'UK');
-insert into auteurs (naam, leeftijd, geslacht, nationaliteit) values ('Saar', '13', 'Female', 'Switserland');
-insert into auteurs (naam, leeftijd, geslacht, nationaliteit) values ('Rick', '53', 'Male', 'Japan');
-insert into auteurs (naam, leeftijd, geslacht, nationaliteit) values ('Tom', '16', 'Male', 'Netherlands');
-insert into auteurs (naam, leeftijd, geslacht, nationaliteit) values ('Wessel', '28', 'Male', 'Suriname');
+insert into auteurs (name, leeftijd, geslacht, nationaliteit) values ('Josh', '20', 'Male', 'UK');
+insert into auteurs (name, leeftijd, geslacht, nationaliteit) values ('Emma', '13', 'Female', 'Marrakech');
+insert into auteurs (name, leeftijd, geslacht, nationaliteit) values ('Derrel', '69', 'Male', 'Germany ');
+insert into auteurs (name, leeftijd, geslacht, nationaliteit) values ('Sophie', '18', 'Female', 'Denmark');
+insert into auteurs (name, leeftijd, geslacht, nationaliteit) values ('Jayson', '28', 'Male', 'Nigeria');
+insert into auteurs (name, leeftijd, geslacht, nationaliteit) values ('Merel', '15', 'Female', 'Netherlands');
+insert into auteurs (name, leeftijd, geslacht, nationaliteit) values ('Mike', '33', 'Male', 'USA');
+insert into auteurs (name, leeftijd, geslacht, nationaliteit) values ('Remco', '20', 'Male', 'Belgium');
+insert into auteurs (name, leeftijd, geslacht, nationaliteit) values ('Daan', '40', 'Male', 'Netherlands');
+insert into auteurs (name, leeftijd, geslacht, nationaliteit) values ('Flynn', '23', 'Male', 'China');
+insert into auteurs (name, leeftijd, geslacht, nationaliteit) values ('Joppe', '16', 'Male', 'France');
+insert into auteurs (name, leeftijd, geslacht, nationaliteit) values ('Bundy', '33', 'Male', 'UK');
+insert into auteurs (name, leeftijd, geslacht, nationaliteit) values ('Saar', '13', 'Female', 'Switserland');
+insert into auteurs (name, leeftijd, geslacht, nationaliteit) values ('Rick', '53', 'Male', 'Japan');
+insert into auteurs (name, leeftijd, geslacht, nationaliteit) values ('Tom', '16', 'Male', 'Netherlands');
+insert into auteurs (name, leeftijd, geslacht, nationaliteit) values ('Wessel', '28', 'Male', 'Suriname');
   
 insert into looks (color) values ('Black');
 insert into looks (color) values ('White');

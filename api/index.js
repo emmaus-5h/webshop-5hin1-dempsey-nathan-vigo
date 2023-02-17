@@ -57,7 +57,10 @@ function echoRequest(request, response) {
 function getReviews(request, response) {
   console.log('API ontvangt /api/reviews/')
   // TODO: breid database uit zodat onderstaande query een lijstje categoriën levert.
-  const sqlOpdracht = db.prepare('SELECT reviews.id AS id, reviews.opmerking AS opmerking, products.name FROM reviews JOIN products on reviews.products_id = products_id ORDER BY price DESC')
+  const sqlOpdracht = db.prepare('SELECT reviews.id AS id, reviews.opmerking AS opmerking,  auteurs.id AS id, auteurs.name AS auteurs_name, products.name FROM reviews JOIN products ON reviews.products_id = products_id JOIN auteurs ON reviews.auteurs_id = auteurs.id ORDER BY price DESC')
+
+  // auteurs.name FROM reviews JOIN auteurs on reviews.auteurs_id = auteur_id ORDER BY price DESC//
+  
   const data = sqlOpdracht.all()
   // console.log(JSON.stringify(data, null, 2))
   response.status(200).send(data)

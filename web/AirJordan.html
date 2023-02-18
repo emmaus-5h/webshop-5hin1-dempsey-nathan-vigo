@@ -3,6 +3,7 @@
 
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Patta Dushi | Site</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
 	 crossorigin="anonymous">
 	<link rel="stylesheet" href="/css/style.css">
@@ -15,48 +16,48 @@
   <!-- toast is een melding die tijdelijk rechtsboven op het scherm verschijnt -->
   <!-- meer info op: https://www.w3schools.com/bootstrap4/bootstrap_ref_js_toasts.asp -->
 
-	<div class="toast" data-delay="2000">
+	<div class="toast" data-delay="5000">
 		<div class="toast-header">
-			<strong class="mr-auto">Product toegevoegd</strong>
+			<strong class="mr-auto">Product toegevoegd!</strong>
 			<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
 		</div>
 		<div class="toast-body">
-			Ga naar je <a href="/basket.html">Winkelwagen</a> om af te rekenen
+			<a href="/basket.html">Klik hier om af te rekenen</a>
 		</div>
 	</div>
 
   <!-- menubalk -->
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#">Shop</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active">
-					<a class="nav-link" href="#">Artiekelen <span class="sr-only">(current)</span>
-                <a class="nav-link" href="#">Air Jordan <span class="sr-only">(current)</span>
-            <a class="nav-link" href="#">Yeezy <span class="sr-only">(current)</span>
-            <a class="nav-link" href="#">Nike Dunk <span class="sr-only">(current)</span>
-              <a class="nav-link" href="#">OFF WHITE <span class="sr-only">(current)</span>
-                <a class="nav-link" href="#">Cactus Jack <span class="sr-only">(current)</span>
-				</li>
-			</ul>
-			<a
-				href="basket.html"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Winkelwagen <span class="num_products"></span></button></a>
-		</div>
-	</nav>
+				<li><a href="index.html">Alle schoenen</a></li>
+        
+				<li><a class="active" href="AirJordan.html">Air Jordan</a></li>
+        <li><a href="Yeezy.html">Yeezy</a></li>
+        <li><a href="NikeDunk.html">Nike Dunk</a></li>
+        <li><a href="OFFWHITE.html">OFF-WHITE</a></li>
+        <li><a href="CactusJack.html">Cactus Jack</a></li>
+        <img class="logo" src="images/pattadushi.png">
+      </ul>
+
+      
+		<a href="basket.html"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Winkelwagen<span class="num_products"></span></button></a>
+	</div>
+</nav>
 
   <!-- lijst met producten, wordt gevuld door javascript -->
 	<main id="index">
 		<div class="container">
-			<h5>Sneakers</h5>
- 			<p>Op deze pagina ziet u een overzicht van alle sneakers die bij ons beschikbaar zijn</p>
-			<p>klik op een artikel voor meer product informatie<p>
-					<p>klik op de "winkelwagentje" om het artikel in je winkelwagen te stoppen</p>
+			<h5>Exclusive sneakers!</h5>
+ 			<p>Op deze pagina ziet u een overzicht van alle sneakers die bij ons beschikbaar zijn.</p>
+			<p>Klik op een artikel voor meer product informatie.<p>
+					<p>klik op het winkelwagentje om het artikel in je winkelwagen te stoppen.</p>
 		</div>	
     
     <!-- template for product info-->
@@ -134,6 +135,8 @@
               clone.querySelector(".product_description").textContent =`${product.description.substr(0, 100)}...`
               clone.querySelector(".product_price").textContent = `€ ${product.price.toFixed(2)}`
               clone.querySelector(".product_code").textContent = product.code
+
+              clone.querySelector(".product_code").textContent = product.code
               clone.querySelector(".product_id").value = product.id
               clone.querySelector(".product_id").dataset.json = JSON.stringify(product)
               clone.querySelector(".product_image").src =`/images/${product.id}.jpg`
@@ -153,4 +156,3 @@
 	</script>
 </body>
 
-</html>

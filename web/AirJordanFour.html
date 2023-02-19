@@ -38,11 +38,12 @@
 			<ul class="navbar-nav mr-auto">
 				<li><a href="index.html">Alle schoenen</a></li>
         
-				<li><a class="active" href="AirJordan.html">Air Jordan</a></li>
+				<li><a class="active" href="AirJordanFour.html">Air Jordan 4</a></li>
         <li><a href="Yeezy.html">Yeezy</a></li>
         <li><a href="NikeDunk.html">Nike Dunk</a></li>
         <li><a href="OFFWHITE.html">OFF-WHITE</a></li>
         <li><a href="CactusJack.html">Cactus Jack</a></li>
+       
         <img class="logo" src="images/pattadushi.png">
       </ul>
 
@@ -103,7 +104,7 @@
         // laad producten
         // de functie showProducts wordt aangeroepen als er antwoord van de API is
         var request = new XMLHttpRequest()
-        request.open('GET', '/api/products', true) 
+        request.open('GET', '/api/AirJordanFour', true) 
         request.onload = showProducts 
         request.send() 
 

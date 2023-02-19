@@ -28,6 +28,12 @@ app.use(express.static('../web'))
 app.get('/api/echo', echoRequest)
 app.get('/api/reviews', getReviews)
 app.get('/api/products', getProducts)
+app.get('/api/AirJordanFour', getAirJordanFour)
+app.get('/api/Yeezy', getYeezy)
+app.get('/api/NikeDunk', getNikeDunk)
+app.get('/api/OFFWHITE', getOFFWHITE)
+app.get('/api/CactusJack', getCactusJack) 
+
 app.get('/api/products/:id', getProductById)
 //app.get('/api/products/:id/related', db.getRelatedProductsById)
 // our API is not protected...so let's not expose these
@@ -53,33 +59,92 @@ function echoRequest(request, response) {
   console.log('API ontvangt /api/echo/?', request.query)
   response.status(200).send(request.query)
 }
-
+// vraagt alle reviews op
 function getReviews(request, response) {
   console.log('API ontvangt /api/reviews/')
   // TODO: breid database uit zodat onderstaande query een lijstje categoriën levert.
   const sqlOpdracht = db.prepare('SELECT reviews.id AS id, reviews.opmerking AS opmerking,  auteurs.id AS id, auteurs.name AS name, products.name FROM reviews JOIN products ON reviews.products_id = products_id JOIN auteurs ON reviews.auteurs_id = auteurs.id ORDER BY price DESC')
 
   
-
-  // auteurs.name FROM reviews JOIN auteurs on reviews.auteurs_id = auteur_id ORDER BY price DESC//
-  
   const data = sqlOpdracht.all()
   // console.log(JSON.stringify(data, null, 2))
   response.status(200).send(data)
   console.log('API verstuurt /api/reviews/')
 }
-
+//vraagt alle producten op
 function getProducts(request, response) {
   console.log('API ontvangt /api/products/', request.query)
   let data = []
-  // const sqlOpdracht = db.prepare('SELECT products.id AS id, products.name AS name, products.description AS description, products.code AS code, products.price AS price FROM products ORDER BY price DESC')
-  const sqlOpdracht = db.prepare('SELECT products.id AS id, products.name AS name, products.description AS description, products.code AS code, products.price AS price, serie.name FROM products JOIN serie ON products.serie_id = serie.id ORDER BY price DESC') //vraag over code? correct??
+
+  const sqlOpdracht = db.prepare('SELECT products.id AS id, products.name AS name, products.description AS description, products.code AS code, products.price AS price, serie.name FROM products JOIN serie ON products.serie_id = serie.id ORDER BY price DESC') 
   
   data = sqlOpdracht.all()
   // console.log(JSON.stringify(data, null, 2))
   response.status(200).send(data)
   console.log('API verstuurt /api/products/')
 }
+
+//vraagt alle schoenen van air jordan 4 op
+function getAirJordanFour(request, response) {
+  console.log('API ontvangt /api/AirJordanFour/', request.query)
+  let data = []
+ 
+  const sqlOpdracht = db.prepare('SELECT * FROM products WHERE serie_id = 1 ORDER BY price DESC ') 
+  
+  data = sqlOpdracht.all()
+  // console.log(JSON.stringify(data, null, 2))
+  response.status(200).send(data)
+  console.log('API verstuurt /api/AirJordan/')
+}
+// vraagt alle schoenen van yeezy op
+function getYeezy(request, response) {
+  console.log('API ontvangt /api/Yeezy/', request.query)
+  let data = []
+
+  const sqlOpdracht = db.prepare('SELECT * FROM products WHERE serie_id = 4 ORDER BY price DESC ') 
+  
+  data = sqlOpdracht.all()
+  // console.log(JSON.stringify(data, null, 2))
+  response.status(200).send(data)
+  console.log('API verstuurt /api/Yeezy/')
+}
+//vraagt alle schoenen van nike dunk op
+function getNikeDunk(request, response) {
+  console.log('API ontvangt /api/NikeDunk/', request.query)
+  let data = []
+
+  const sqlOpdracht = db.prepare('SELECT * FROM products WHERE serie_id = 5 ORDER BY price DESC ') 
+  
+  data = sqlOpdracht.all()
+  // console.log(JSON.stringify(data, null, 2))
+  response.status(200).send(data)
+  console.log('API verstuurt /api/NikeDunk/')
+}
+//vraagt alle schoenen van off-white op
+function getOFFWHITE(request, response) {
+  console.log('API ontvangt /api/OFFWHITE/', request.query)
+  let data = []
+  
+  const sqlOpdracht = db.prepare('SELECT * FROM products WHERE serie_id = 6 ORDER BY price DESC') 
+  
+  data = sqlOpdracht.all()
+  // console.log(JSON.stringify(data, null, 2))
+  response.status(200).send(data)
+  console.log('API verstuurt /api/OFFWHITE/')
+}
+//vraagt alle schoenen van cactus jack op
+function getCactusJack(request, response) {
+  console.log('API ontvangt /api/CactusJack/', request.query)
+  let data = []
+  
+  const sqlOpdracht = db.prepare('SELECT * FROM products WHERE serie_id = 3 ORDER BY price DESC') 
+  
+  data = sqlOpdracht.all()
+  // console.log(JSON.stringify(data, null, 2))
+  response.status(200).send(data)
+  console.log('API verstuurt /api/CactusJack/')
+}
+
 
 function getProductById(request, response) {
   console.log('API ontvangt /api/products/:id', request.query)
